@@ -21,10 +21,13 @@ def bubble_sort(datas):
 
 def select_sort(datas):
     for i in range(len(datas) - 1):
-
+        min_idx = i
         for j in range(i + 1, len(datas)):
-            if datas[i] > datas[j]:
-                datas[i], datas[j] = datas[j], datas[i]
+            if datas[min_idx] > datas[j]:
+                min_idx = j
+        datas[i], datas[min_idx] = datas[min_idx], datas[i]
+
+
 
     return list_data
 
@@ -36,13 +39,13 @@ def insert_sort(datas):
 
     return datas
 
-list_data = [5, 4, 3, 2, 1]
-print('bubble_sort = ',bubble_sort(list_data))
+# list_data = [5, 4, 3, 2, 1]
+# print('bubble_sort = ',bubble_sort(list_data))
 
-list_data = [5, 4, 3, 2, 1]
+list_data = [3, 1, 2, 5, 4, 1]
 print('select_sort = ',select_sort(list_data))
 
-list_data = [5, 4, 3, 2, 1]
-print('insert_sort = ', insert_sort(list_data))
+# list_data = [5, 4, 3, 2, 1]
+# print('insert_sort = ', insert_sort(list_data))
 
 
